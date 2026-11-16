@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#2b190f" />
+      <stop offset="55%" stop-color="#120b08" />
+      <stop offset="100%" stop-color="#070504" />
+    </radialGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="600" cy="315" r="240" fill="none" stroke="rgba(245,158,11,0.18)" stroke-width="2" />
+  <circle cx="600" cy="315" r="290" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+  <text x="600" y="250" text-anchor="middle" fill="rgba(255,255,255,0.12)" font-family="system-ui, sans-serif" font-size="140" font-weight="900" letter-spacing="14">BURGERS</text>
+  <rect x="440" y="268" width="320" height="44" rx="22" fill="url(#accent)" />
+  <text x="600" y="297" text-anchor="middle" fill="#0a0706" font-family="system-ui, sans-serif" font-size="18" font-weight="900" letter-spacing="5">ROCKY'S CRAFT KITCHEN</text>
+  <text x="600" y="375" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="52" font-weight="900" letter-spacing="3">3D INTERACTIVE BURGER SHOWCASE</text>
+  <text x="600" y="425" text-anchor="middle" fill="#d4d4d8" font-family="system-ui, sans-serif" font-size="20" font-weight="600" letter-spacing="4">SOHO NEW YORK • ARTS DISTRICT LOS ANGELES</text>
+</svg>

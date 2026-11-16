@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="canonical" href="https://rockysburgers.example/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0706" />
+    <meta
+      name="description"
+      content="Rocky's Burgers — Craft Gourmet Fried Chicken Burgers, Double Angus Smash, and Triple Smoked BBQ Burgers crafted with 100% prime ingredients in an interactive 3D showcase."
+    />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ROCKY'S — Gourmet Burgers & 3D Interactive Culinary Experience" />
+    <meta
+      property="og:description"
+      content="Explore 24h herb-brined buttermilk fried chicken burgers, Double Black Angus smash stacks, and interactive WebGL platter choreography."
+    />
+    <meta property="og:url" content="https://rockysburgers.example/" />
+    <meta property="og:image" content="https://rockysburgers.example/og-cover.svg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ROCKY'S — Gourmet Burgers & 3D Culinary Showcase" />
+    <meta
+      name="twitter:description"
+      content="Interactive 3D craft burger studio, exploded ingredient provenance, and flagship kitchens in SoHo NY & DTLA."
+    />
+    <meta name="twitter:image" content="https://rockysburgers.example/og-cover.svg" />
+
+    <title>ROCKY'S — Gourmet Burgers & 3D Interactive Culinary Experience</title>
+
+    <!-- Google Fonts: Bebas Neue, Anton, Plus Jakarta Sans, Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured Data (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Restaurant",
+            "name": "Rocky's Craft Burgers",
+            "servesCuisine": ["Craft Burgers", "Fried Chicken", "American Gourmet"],
+            "priceRange": "$$",
+            "url": "https://rockysburgers.example/",
+            "telephone": "+1-212-555-0192",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "482 Broome Street",
+              "addressLocality": "New York",
+              "addressRegion": "NY",
+              "postalCode": "10013",
+              "addressCountry": "US"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "11:30",
+                "closes": "23:59"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Are your chicken and beef burgers prepared fresh to order?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Our buttermilk chicken is herb-brined for 24 hours and dredged per ticket, while our 100% Black Angus beef is hand-smashed onto 500°F seasoned cast iron only after your order fires."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you accommodate allergies and gluten-sensitive guests?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "All brioche buns can be swapped for our Crisp Romaine Lettuce Wrap at zero extra cost, and our Golden Wire Fries are cooked in dedicated fryers using pure peanut oil."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-[#0a0706] text-[#f4efe8] antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

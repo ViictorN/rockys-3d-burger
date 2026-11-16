@@ -1,0 +1,14 @@
+/* Rocky's 3D Burger — Stage Atmosphere & Editorial Typography Utilities */
+
+.stage-radial-aura {
+  background:
+    radial-gradient(circle at 50% 48%, color-mix(in oklch, var(--brand-orange) 13%, transparent) 0%, transparent 52%),
+    radial-gradient(circle at 50% 50%, #1a120e 0%, #100b08 45%, #070504 90%);
+}
+
+.backdrop-display-title {
+  font-size: clamp(5.5rem, 24vw, 23.5rem);
+  line-height: 0.88;
+  letter-spacing: 0.045em;
+  text-shadow: 0 12px 36px rgba(0, 0, 0, 0.94);
+}

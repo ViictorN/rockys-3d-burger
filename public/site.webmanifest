@@ -1,0 +1,16 @@
+{
+  "name": "Rocky's Craft Burgers — 3D Culinary Showcase",
+  "short_name": "Rocky's",
+  "description": "Craft Gourmet Fried Chicken Burgers, Double Angus Smash, and interactive 3D platter experience.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0706",
+  "theme_color": "#0a0706",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

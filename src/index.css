@@ -1,0 +1,249 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: oklch(0.14 0.015 45);
+    --bg-void: oklch(0.09 0.01 40);
+    --surface-elevated: oklch(0.18 0.02 45);
+    --surface-glass: color-mix(in oklch, var(--surface-elevated) 72%, transparent);
+    --brand-orange: oklch(0.76 0.17 70);
+    --brand-orange-deep: oklch(0.64 0.21 42);
+    --brand-cream: oklch(0.96 0.015 75);
+    --brand-wood: oklch(0.22 0.04 45);
+    --text-primary: oklch(0.96 0.012 75);
+    --text-secondary: oklch(0.74 0.015 65);
+    --border-specular: color-mix(in oklch, white 14%, transparent);
+    --ring-focus: oklch(0.78 0.16 70);
+    --space-unit: 8px;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-void);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100dvh;
+    position: relative;
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--ring-focus);
+    outline-offset: 2px;
+  }
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', 'Anton', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.font-anton {
+  font-family: 'Anton', 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.font-outfit {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Liquid Glassmorphism surfaces with specular top rim */
+.glass-panel {
+  background: color-mix(in oklch, var(--surface-elevated) 78%, transparent);
+  backdrop-filter: blur(20px) saturate(155%);
+  -webkit-backdrop-filter: blur(20px) saturate(155%);
+  border: 1px solid var(--border-specular);
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklch, white 18%, transparent),
+    0 24px 60px -12px oklch(0.05 0.01 40 / 0.85);
+}
+
+.glass-panel-subtle {
+  background: color-mix(in oklch, var(--surface-elevated) 52%, transparent);
+  backdrop-filter: blur(14px) saturate(135%);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+  border: 1px solid color-mix(in oklch, white 9%, transparent);
+}
+
+/* Subtle analog cinema grain overlay */
+.film-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Native Top-Layer Dialog Surface + @starting-style entrance */
+dialog.rocky-dialog {
+  margin: auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  max-width: min(94vw, 60rem);
+  max-height: 92dvh;
+  width: 100%;
+  overflow: visible;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+dialog.rocky-dialog::backdrop {
+  background: oklch(0.06 0.01 40 / 0.84);
+  backdrop-filter: blur(10px);
+  transition: opacity 0.25s ease;
+}
+
+@starting-style {
+  dialog.rocky-dialog[open] {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  dialog.rocky-dialog[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+/* Modern CSS Form Validation (:user-invalid only triggers after real user interaction) */
+.rocky-field {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rocky-field:user-invalid {
+  border-color: oklch(0.65 0.22 25);
+  box-shadow: 0 0 0 2px oklch(0.65 0.22 25 / 0.2);
+}
+
+.modern-input-grow {
+  field-sizing: content;
+  min-height: 2.75rem;
+}
+
+/* CSS Container Query responsive showcase grid */
+.card-container-shell {
+  container-type: inline-size;
+}
+
+.card-container-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(1rem, 2.2cqi, 1.75rem);
+}
+
+/* Pill CTA button with glowing depth */
+.cta-pill-button {
+  background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-deep) 100%);
+  box-shadow:
+    0 4px 20px -2px color-mix(in oklch, var(--brand-orange) 45%, transparent),
+    inset 0 0 0 1px color-mix(in oklch, white 22%, transparent);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-pill-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow:
+    0 8px 30px -2px color-mix(in oklch, var(--brand-orange) 65%, transparent),
+    inset 0 0 0 1px color-mix(in oklch, white 35%, transparent);
+}
+
+.cta-pill-button:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Line animations */
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw-line {
+  stroke-dasharray: 240;
+  stroke-dashoffset: 240;
+  animation: dash 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.4s ease-in-out infinite;
+}
+
+.hero-vignette {
+  background: radial-gradient(
+    circle at 50% 50%,
+    oklch(0.76 0.17 70 / 0.08) 0%,
+    oklch(0.14 0.02 45 / 0.45) 45%,
+    var(--bg-void) 88%
+  );
+}
+
+/* Long list rendering optimization */
+.deferred-list-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 420px;
+}
+
+/* Custom scrollbar for overlays */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #141210;
+}
+::-webkit-scrollbar-thumb {
+  background: #38312d;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+/* Mandatory Accessibility: Reduced Motion Support (without hiding content) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
